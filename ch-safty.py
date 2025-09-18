@@ -1,3 +1,10 @@
+# before run this code should be install venv using apt intall python3-venv -y
+# create .env using python3 -m venv .env
+# activate .env using source .env/bin/activate
+# install required python packages using pip install -r requirements.txt
+# also install safty using pip install safty
+# then run this code as python3 ch-safty.py
+
 import subprocess
 import json
 
