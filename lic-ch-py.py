@@ -2,6 +2,8 @@
 # create .env using python3 -m venv .env
 # activate .env using source .env/bin/activate
 # install required python packages using pip install -r requirements.txt
+# also install scanner as pip install pip-licenses 
+
 # then run this code as python3 lic-ch-py.py
 
 
