@@ -2,7 +2,8 @@
 # create .env using python3 -m venv .env
 # activate .env using source .env/bin/activate
 # install required python packages using pip install -r requirements.txt
-# also install safty using pip install safty
+# also install safety using pip install safety
+
 # then run this code as python3 ch-safty.py
 
 import subprocess
