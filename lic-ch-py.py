@@ -1,16 +1,12 @@
+# before run this code should be install venv using apt intall python3-venv -y
+# create .env using python3 -m venv .env
+# activate .env using source .env/bin/activate
+# install required python packages using pip install -r requirements.txt
+# then run this code as python3 lic-ch-py.py
+
+
 import subprocess
 import json
-import os
-
-def get_installed_packages():
-    """Get a list of installed packages in the current Python environment."""
-    result = subprocess.run(
-        ["pip", "freeze"], stdout=subprocess.PIPE, stderr=subprocess.PIPE
-    )
-    if result.returncode != 0:
-        print("Error fetching installed packages.")
-        return []
-    return result.stdout.decode().splitlines()
 
 def get_license_info():
     """Fetch license information for installed packages."""
@@ -26,22 +22,11 @@ def get_license_info():
 def display_licenses(licenses):
     """Display license information in a readable format."""
     for package in licenses:
-        print(f"Package: {package['name']}")
-        print(f"  Version: {package['version']}")
-        print(f"  License: {package['license']}")
-        print(f"  License File: {package.get('license_file', 'N/A')}")
+        print(f"Package: {package['Name']}")
+        print(f"  Version: {package['Version']}")
+        print(f"  License: {package['License']}")
         print("-" * 40)
 
-def save_licenses_to_file(licenses, filename="licenses_report.json"):
-    """Save the license report to a JSON file."""
-    with open(filename, "w") as f:
-        json.dump(licenses, f, indent=4)
-    print(f"License information saved to {filename}")
-
 if __name__ == "__main__":
-    # Fetch and display license info for installed packages
     licenses = get_license_info()
     display_licenses(licenses)
-    
-    # Optionally save the report to a JSON file
-    save_licenses_to_file(licenses)
